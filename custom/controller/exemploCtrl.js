@@ -1,5 +1,5 @@
 // Este script deve ser carregado em 'px-config.js', verifique a variável 'controllers'
-app.controller('exemploCtrl', function($scope, $element, $attrs) {
+app.controller('exemploCtrl', function($scope, $element, $attrs, $rootScope) {
 
     //console.info('exemploCtrl carregado com sucesso.');
 
@@ -38,7 +38,9 @@ app.controller('exemploCtrl', function($scope, $element, $attrs) {
             }, {
                 title: 'CPF',
                 field: 'exe_cpf',
-                type: 'varchar'
+                type: 'int',
+                filter: angular.element($('#filtroCPF')),
+                filterOperator: '='
             }, {
                 title: 'Data',
                 field: 'exe_data',
@@ -53,6 +55,7 @@ app.controller('exemploCtrl', function($scope, $element, $attrs) {
      */
     $scope.getData = function() {
 
+        console.info($rootScope.globals);
         /**
          * Recupera dados que são carregados na listagem
          */
@@ -70,8 +73,8 @@ app.controller('exemploCtrl', function($scope, $element, $attrs) {
      */
     $scope.showFilter = function() {
 
-        $header = $('#headerSearch');        
-        $content = $header.next();        
+        $header = $('#headerSearch');
+        $content = $header.next();
         $content.slideToggle(500, function() {});
         $scope.filterExpand = !$scope.filterExpand;
         $header.blur();

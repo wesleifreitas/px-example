@@ -1,10 +1,10 @@
 /**
- * fontes Phoenix Project
+ * Componentes Phoenix Project
  * @return {[type]} [description]
  */
 function pxProjectPackage() {
-	return '../px-project/src/';
-};
+	return 'bower_components/px-project/src/';
+}
 
 $(function() {
 
@@ -15,12 +15,13 @@ $(function() {
 		file: 'custom/controller/exemploCtrl.js'
 	}];
 
-
 	// Loop em controllers
 	$.each(controllers, function(i, item) {
 		$("<script/>").attr('src', item.file).appendTo($('head'));
 	});
 
+	// Angular Material Theme
+	// https://material.angularjs.org/latest/#/Theming/01_introduction
 	app.config(function($mdThemingProvider) {
 		//red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orange, brown, grey, blue-grey
 		$mdThemingProvider.theme('default')
