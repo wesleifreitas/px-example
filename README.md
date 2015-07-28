@@ -4,7 +4,7 @@ Este projeto utiliza os arquivos de distribução [px-project](https://github.co
 Para utilizar em seu próprio projeto local siga as instruções a seguir.
 
 ## Recomendação
-É recomendado ler o [Developer Guide](https://github.com/wesleifreitas/px-project/tree/master/docs/guide-pt-BR) antes de prosseguir
+É recomendado ler o [Developer Guide - px-project](https://github.com/wesleifreitas/px-project/tree/master/docs/guide-pt-BR) antes de prosseguir
 
 ## Requisitos
 
