@@ -48,8 +48,8 @@ Execute o comando:
 bower init
 ```
 
-Irá solicitar algumas informações, avance as etapas até que se crie o arquivo bower.json na pasta raíz. 
-Por fim instale os arquivos de distribuição px-project com o seguinte comando:
+Irá solicitar algumas informações, avance as etapas até que se crie o arquivo **bower.json** na pasta raíz. 
+Por fim instale os arquivos de distribuição **px-project** com o seguinte comando:
 
 ```shell
 bower install px-project --save
@@ -60,7 +60,7 @@ bower install px-project --save
 Monte a seguinte estrutura de diretório e arquivos:
 
 ```
-bower_components/                         este diretório foi criado Bower
+bower_components/                         este diretório foi criado pelo Bower
 custom/                                   componentes customizados do seu projeto
 custom/assets/wallpaper/papelParede1.jpg  imagem de fundo do sistema
 custom/controller/                        controllers do projeto (*.js)         
