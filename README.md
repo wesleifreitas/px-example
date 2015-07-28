@@ -4,7 +4,7 @@ Este projeto utiliza os arquivos de distribução [px-project](https://github.co
 Para utilizar em seu próprio projeto local siga as instruções a seguir.
 
 ## Recomendação
-É recomendado ler o [Developer Guide - px-project](https://github.com/wesleifreitas/px-project/tree/master/docs/guide-pt-BR) antes de prosseguir
+É recomendado ler o [Developer Guide - px-project](https://github.com/wesleifreitas/px-project/tree/master/docs/guide-pt-BR) antes de prosseguir.
 
 ## Requisitos
 
@@ -75,7 +75,7 @@ style.css                                 css do projeto
 
 ## Conteúdo dos arquivos
 
-* custom/assets/wallpaper/[papelParede1.jpg](https://raw.githubusercontent.com/wesleifreitas/px-example/master/custom/assets/wallpaper/papelParede1.jpg) (Se preferir você poderá modificar está imagem posteriormente)
+* custom/assets/wallpaper/[papelParede1.jpg](https://raw.githubusercontent.com/wesleifreitas/px-example/master/custom/assets/wallpaper/papelParede1.jpg) (A imagem de fundo poderá ser alterada no futuro)
 * custom/controller/[exemploCtrl.js](https://github.com/wesleifreitas/px-example/blob/master/custom/controller/exemploCtrl.js)
 * custom/view/[exemplo.html](https://github.com/wesleifreitas/px-example/blob/master/custom/view/exemplo.html)
 * [index.html](https://github.com/wesleifreitas/px-example/blob/master/index.html)
