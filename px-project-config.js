@@ -1,34 +1,39 @@
-/**
- * Componentes Phoenix Project
- * @return {[type]} [description]
- */
-function pxProjectPackage() {
-	return 'bower_components/px-project/src/';
-}
-
 $(function() {
+	/**
+	 * Module pxConfig
+	 * Configurações do sistema
+	 */
+	angular.module('pxConfig', [])
+		.constant('pxConfig', {
+			PX_PACKAGE: 'bower_components/px-project/src/', // Pacote Phoenix Project
+			EXTERNAL_COMPONENTS: 'bower_components/', // Componentes externos
+			PROJECT_NAME: 'Phoenix Project - Exemplo', // Nome do projeto
+			PROJECT_SRC: 'px-example' // Source do projeto
+		})
+		.config(function(pxConfig) {
 
-	'use strict';
+			// Custom Controllers	
+			/*
+			Exemplo:
 
-	// Custom Controllers
-	var controllers = [{
-		file: 'custom/controller/exemploCtrl.js'
-	}];
+			var controllers = [{
+				file: 'custom/cliente/cliente.controller.js'
+			}, {
+				file: 'custom/produto/produto.controller.js'
+			}, {
+				file: 'custom/pedido/pedido.controller.js'
+			}];
+			*/
+			var jsLoader = [{
+				file: 'custom/exemplo/exemplo.controller.js'
+			}, {
+				file: 'custom/exemplo/exemplo.service.js'
+			}];
 
-	// Loop em controllers
-	$.each(controllers, function(i, item) {
-		$("<script/>").attr('src', item.file).appendTo($('head'));
-	});
-
-	// Angular Material Theme
-	// https://material.angularjs.org/latest/#/Theming/01_introduction
-	app.config(function($mdThemingProvider) {
-		//red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orange, brown, grey, blue-grey
-		$mdThemingProvider.theme('default')
-			.primaryPalette('blue-grey')
-			.accentPalette('grey');
-
-		$mdThemingProvider.theme('darkTheme')
-			.primaryPalette('grey')
-	});
+			// Loop em jsLoader
+			// Incluir java scripts
+			$.each(jsLoader, function(i, item) {
+				$("<script/>").attr('src', item.file).appendTo($('head'));
+			});
+		});
 });

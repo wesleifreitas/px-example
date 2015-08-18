@@ -1,12 +1,26 @@
-// Este script deve ser carregado em 'px-config.js', verifique a variável 'controllers'
-app.controller('exemploCtrl', function($scope, $element, $attrs, $rootScope) {
+app.controller('exemploCtrl', ['exemploService', 'pxConfig', '$scope', '$element', '$attrs', function(exemploService, pxConfig, $scope, $element, $attrs, $rootScope) {
 
-    //console.info('exemploCtrl carregado com sucesso.');
+    // Variáveis gerais - Start
+
+    // Define as opções de status
+    $scope.dataStatus = {
+        // array, opções do select com opção "Todos"
+        optionsAll: exemploService.status(true),
+        // array, opções do select sem opção "Todos"
+        options: exemploService.status(false),
+    };
+
+    // default de options para o filtro filtroStatus
+    $scope.filtroStatus = exemploService.status(true)[0]
+
+    // Variáveis gerais - End
+
+    // Listagem - Start
 
     /**
      * Controle da listagem
-     * Note que a propriedade 'control' da directive px-grid é igual a 'gridControl'
-     * Exemplo: <px-grid control="gridControl">
+     * Note que a propriedade 'control' da directive px-data-grid é igual a 'gridControl'
+     * Exemplo: <px-data-grid control="gridControl">
      * @type {Object}
      */
     $scope.gridControl = {};
@@ -16,7 +30,6 @@ app.controller('exemploCtrl', function($scope, $element, $attrs, $rootScope) {
      * @return {[type]}   [description]
      */
     $scope.gridInit = function() {
-
         /**
          * Configurações da listagem
          * - fields: Colunas da listagem
@@ -24,15 +37,26 @@ app.controller('exemploCtrl', function($scope, $element, $attrs, $rootScope) {
          */
         $scope.grid = {
             fields: [{
+                pk: true,
                 title: 'id',
                 field: 'exe_id',
                 type: 'int',
                 filter: angular.element($('#filtroId')),
                 filterOperator: '='
             }, {
+                title: 'Status',
+                field: 'exe_ativo_label',
+                type: 'bit',
+                filter: angular.element($('#filtroStatus')),
+                filterOperator: '=',
+                filterOptions: {
+                    field: 'exe_ativo',
+                    selectedItem: 'id'
+                }
+            }, {
                 title: 'Nome',
                 field: 'exe_nome',
-                type: 'varchar',
+                type: 'string',
                 filter: angular.element($('#filtroNome')),
                 filterOperator: '%LIKE%'
             }, {
@@ -42,10 +66,22 @@ app.controller('exemploCtrl', function($scope, $element, $attrs, $rootScope) {
                 filter: angular.element($('#filtroCPF')),
                 filterOperator: '='
             }, {
+                title: 'Telefone',
+                field: 'exe_telefone',
+                type: 'string',
+                filter: angular.element($('#filtroTelefone')),
+                filterOperator: '='
+            }, {
+                title: 'Valor',
+                field: 'exe_valor',
+                type: 'decimal',
+                filter: angular.element($('#filtroValor')),
+                filterOperator: '='
+            }, {
                 title: 'Data',
                 field: 'exe_data',
-                type: 'varchar'
-            }]
+                type: 'datetime'
+            }],
         };
     };
 
@@ -54,13 +90,13 @@ app.controller('exemploCtrl', function($scope, $element, $attrs, $rootScope) {
      * @return {[type]} [description]
      */
     $scope.getData = function() {
-
-        console.info($rootScope.globals);
         /**
          * Recupera dados que são carregados na listagem
          */
         $scope.gridControl.getData();
     };
+
+    // Listagem - End
 
     /**
      * Váriavel de controle de visualição do Filtro Avançado
@@ -79,4 +115,4 @@ app.controller('exemploCtrl', function($scope, $element, $attrs, $rootScope) {
         $scope.filterExpand = !$scope.filterExpand;
         $header.blur();
     };
-});
+}]);
