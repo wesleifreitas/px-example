@@ -1,39 +1,42 @@
-$(function() {
-	/**
-	 * Module pxConfig
-	 * Configurações do sistema
-	 */
-	angular.module('pxConfig', [])
-		.constant('pxConfig', {
-			PX_PACKAGE: 'bower_components/px-project/src/', // Pacote Phoenix Project
-			EXTERNAL_COMPONENTS: 'bower_components/', // Componentes externos
-			PROJECT_NAME: 'Phoenix Project - Exemplo', // Nome do projeto
-			PROJECT_SRC: 'px-example' // Source do projeto
-		})
-		.config(function(pxConfig) {
+(function() {
+    'use strict';
 
-			// Custom Controllers	
-			/*
-			Exemplo:
+    // pxConfig
+    // Configurações do sistema
+    angular.module('pxConfig', [])
+        .constant('pxConfig', {
+            PX_PACKAGE: 'bower_components/px-project/src/', // Pacote Phoenix Project
+            EXTERNAL_COMPONENTS: 'bower_components/', // Componentes externos
+            PROJECT_NAME: 'Phoenix Project - Exemplo', // Nome do projeto
+            PROJECT_SRC: 'px-example/', // Source do projeto
+            LOCALE: 'pt-BR' // Locale
+        })
+        .config(function(pxConfig) {
 
-			var controllers = [{
-				file: 'custom/cliente/cliente.controller.js'
-			}, {
-				file: 'custom/produto/produto.controller.js'
-			}, {
-				file: 'custom/pedido/pedido.controller.js'
-			}];
-			*/
-			var jsLoader = [{
-				file: 'custom/exemplo/exemplo.controller.js'
-			}, {
-				file: 'custom/exemplo/exemplo.service.js'
-			}];
+            // Custom JS
+            /*
+            Exemplo:
 
-			// Loop em jsLoader
-			// Incluir java scripts
-			$.each(jsLoader, function(i, item) {
-				$("<script/>").attr('src', item.file).appendTo($('head'));
-			});
-		});
-});
+            var controllers = [{
+            	file: 'custom/cliente/cliente.controller.js'
+            }, {
+            	file: 'custom/produto/cliente.service.js'
+            }, {
+            	file: 'custom/produto/pedido.controller.js'
+            }, {
+            	file: 'custom/pedido/pedido.service.js'
+            }];
+            */
+            var jsLoader = [{
+                file: 'custom/exemplo/exemplo.controller.js'
+            }, {
+                file: 'custom/exemplo/exemplo.service.js'
+            }];
+
+            // Loop em jsLoader
+            // Incluir java scripts
+            $.each(jsLoader, function(i, item) {
+                $("<script/>").attr('src', item.file).appendTo($('head'));
+            });
+        });
+})();
