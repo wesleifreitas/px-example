@@ -26,7 +26,7 @@ Parâmetro | Valor
 ------------ | -------------
 CF Data Source Name | px_project_sql
 Database | px_project
-Server | sql7.hostek.com | Port: 1433
+Server | sql8.hostek.com | Port: 1433
 User name | team
 Password | Px2015
 
@@ -60,24 +60,23 @@ bower install px-project --save
 Monte a seguinte estrutura de diretório e arquivos:
 
 ```
-bower_components/                         este diretório foi criado pelo Bower
+bower_components/                         diretório criado pelo Bower
 custom/                                   componentes customizados do seu projeto
 custom/assets/wallpaper/papelParede1.jpg  imagem de fundo do sistema
-custom/controller/                        controllers do projeto (*.js)         
-custom/controller/exemploCtrl.js          controller (exemplo)
-custom/model                              armazena fontes do back-end
-custom/view                               views do projeto (*.html)
-custom/view/exemplo.html                  view (exemplo)
+custom/exemplo/exemplo.controller.js      controller (exemplo)
+custom/exemplo/exemplo.html               view (exemplo)
+custom/exemplo/exemplo.service.js         service (exemplo)
 index.html                                html principal
-px-project-config.js                      configuração do px-project
+px-project-config.js                      configuração do projeto
 style.css                                 css do projeto
 ```
 
 ## Conteúdo dos arquivos
 
-* custom/assets/wallpaper/[papelParede1.jpg](https://raw.githubusercontent.com/wesleifreitas/px-example/master/custom/assets/wallpaper/papelParede1.jpg) (A imagem de fundo poderá ser alterada no futuro)
-* custom/controller/[exemploCtrl.js](https://github.com/wesleifreitas/px-example/blob/master/custom/controller/exemploCtrl.js)
-* custom/view/[exemplo.html](https://github.com/wesleifreitas/px-example/blob/master/custom/view/exemplo.html)
+* custom/assets/wallpaper/[papelParede1.jpg](https://raw.githubusercontent.com/wesleifreitas/px-example/master/custom/assets/wallpaper/papelParede1.jpg)
+* custom/exemplo/[exemplo.controller.js](https://github.com/wesleifreitas/px-example/blob/master/custom/exemplo/exemplo.controller.js)
+* custom/exemplo/[exemplo.html](https://github.com/wesleifreitas/px-example/blob/master/custom/exemplo/exemplo.html)
+* custom/exemplo/[exemplo.service.js](https://github.com/wesleifreitas/px-example/blob/master/custom/exemplo/exemplo.service.js)
 * [index.html](https://github.com/wesleifreitas/px-example/blob/master/index.html)
 * [px-project-config.js](https://github.com/wesleifreitas/px-example/blob/master/px-project-config.js)
 * [style.css](https://github.com/wesleifreitas/px-example/blob/master/style.css)
