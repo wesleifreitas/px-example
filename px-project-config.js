@@ -7,6 +7,7 @@
         .constant('pxConfig', {
             PX_PACKAGE: 'bower_components/px-project/src/', // Pacote Phoenix Project
             EXTERNAL_COMPONENTS: 'bower_components/', // Componentes externos
+            PROJECT_ID: 1, // Identificação do projeto (table: px.project)
             PROJECT_NAME: 'Phoenix Project - Exemplo', // Nome do projeto
             PROJECT_SRC: 'px-example/', // Source do projeto
             LOCALE: 'pt-BR' // Locale
