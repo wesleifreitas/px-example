@@ -1,3 +1,3 @@
-define([    
-    '../exemplo/exemplo.controller'    
-], function () {});
+define([
+	'../exemplo/exemplo.controller'
+], function() {});
