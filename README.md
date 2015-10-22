@@ -60,26 +60,50 @@ bower install px-project --save
 Monte a seguinte estrutura de diretório e arquivos:
 
 ```
-bower_components/                         diretório criado pelo Bower
-custom/                                   componentes customizados do seu projeto
-custom/assets/wallpaper/papelParede1.jpg  imagem de fundo do sistema
-custom/exemplo/exemplo.controller.js      controller (exemplo)
-custom/exemplo/exemplo.html               view (exemplo)
-custom/exemplo/exemplo.service.js         service (exemplo)
-index.html                                html principal
-px-project-config.js                      configuração do projeto
-style.css                                 css do projeto
+src/custom/                                     componentes customizados do projeto
+src/custom/assets/wallpaper/papelParede1.jpg    imagem de plano de fundo do sistema
+src/custom/controllers/index.js                 cadastrar controllers do projeto
+src/custom/controllers/module.js                registrar controllers definidos em controllers/index.js
+src/custom/directives/index.js                  cadastrar directives do projeto
+src/custom/directives/module.js                 registrar directives definidos em directives/index.js
+src/custom/exemplo/exemplo.controller.js        exemplo de controller
+src/custom/exemplo/exemplo.html                 exemplo de view
+src/custom/exemplo/exemplo.service.js           exemplo de service
+src/custom/filters/index.js                     cadastrar filters do projeto
+src/custom/filters/module.js                    registrar filters definidos em filters/index.js
+src/custom/services/index.js                    cadastrar services do projeto
+src/custom/services/module.js                   registrar services definidos em services/index.js
+src/js/app.js                                   configurar projeto angularjs
+src/js/main.js                                  configurar data-main(requirejs)
+src/js/px-config.js                             configurar projeto px-project
+src/js/routes.js                                configurar routes(angularjs) do projeto
+src/lib                                         componentes externos
+src/index.html                                  html principal
+src//styles.css                                 css do projeto
 ```
+Note que a pasta *src* é opcional.
 
 ## Conteúdo dos arquivos
 
-* custom/assets/wallpaper/[papelParede1.jpg](https://raw.githubusercontent.com/wesleifreitas/px-example/master/custom/assets/wallpaper/papelParede1.jpg)
-* custom/exemplo/[exemplo.controller.js](https://github.com/wesleifreitas/px-example/blob/master/custom/exemplo/exemplo.controller.js)
-* custom/exemplo/[exemplo.html](https://github.com/wesleifreitas/px-example/blob/master/custom/exemplo/exemplo.html)
-* custom/exemplo/[exemplo.service.js](https://github.com/wesleifreitas/px-example/blob/master/custom/exemplo/exemplo.service.js)
-* [index.html](https://github.com/wesleifreitas/px-example/blob/master/index.html)
-* [px-project-config.js](https://github.com/wesleifreitas/px-example/blob/master/px-project-config.js)
-* [style.css](https://github.com/wesleifreitas/px-example/blob/master/style.css)
+* src/custom/controllers/[index.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/controllers/index.js)
+* src/custom/controllers/[module.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/controllers/module.js)
+* src/custom/directives/[index.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/directives/index.js)
+* src/custom/directives/[module.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/directives/module.js)
+* src/custom/assets/wallpaper/[papelParede1.jpg](https://raw.githubusercontent.com/wesleifreitas/px-example/master/src/custom/assets/wallpaper/px-example-q70.jpg)
+* src/custom/exemplo/[exemplo.controller.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/exemplo/exemplo.controller.js)
+* src/custom/exemplo/[exemplo.html](https://github.com/wesleifreitas/px-example/blob/master/src/custom/exemplo/exemplo.html)
+* src/custom/exemplo/[exemplo.service.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/exemplo/exemplo.service.js)
+* src/custom/filters/[index.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/filters/index.js)
+* src/custom/filters/[module.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/filters/module.js)
+* src/custom/services/[index.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/services/index.js)
+* src/custom/services/[module.js](https://github.com/wesleifreitas/px-example/blob/master/src/custom/services/module.js)
+* src/js/[app.js](https://github.com/wesleifreitas/px-example/blob/master/src/js/app.js)
+* src/js/[main.js](https://github.com/wesleifreitas/px-example/blob/master/src/js/main.js)
+* src/js/[px-config.js](https://github.com/wesleifreitas/px-example/blob/master/src/js/px-config.js)
+* src/js/[routes.js](https://github.com/wesleifreitas/px-example/blob/master/src/js/routes.js)
+* src/[index.html](https://github.com/wesleifreitas/px-example/blob/master/src/index.html)
+* src/[px-project-config.js](https://github.com/wesleifreitas/px-example/blob/master/src/js/px-config.js)
+* src/[style.css](https://github.com/wesleifreitas/px-example/blob/master/src/styles.css)
 
 ## Primeiro acesso
 
@@ -91,3 +115,4 @@ Campo | Valor
 Usuário | px-project
 Senha | atopng
 
+Após testar o login, solicite um ID de projeto e instruções para proseguir com o desenvolvimento de seu projeto. Você pode realizar esta solicitação adicionando uma [issue](https://github.com/wesleifreitas/px-example/issues) ou enviando um e-mail para team@pxproject.com.br
