@@ -23,6 +23,6 @@
     "tests"
   ],
   "dependencies": {
-    "px-project": "~1.0"
+    "px-project": "~1.1"
   }
 }

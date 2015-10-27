@@ -17,9 +17,9 @@ require.config({
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
         'px-config': 'px-config',
-        'metro': '../lib/px-project/src/system/core/external/metro.min',
-        'docs': '../lib/px-project/src/system/core/external/docs',
-        'px-util': '../lib/px-project/src/system/utils/js/px-util'
+        'metro': '../lib/px-project/dist/system/core/external/metro',
+        'docs': '../lib/px-project/dist/system/core/external/docs',
+        'px-util': '../lib/px-project/dist/system/utils/js/px-util'
     },
     shim: {
         'angular': {

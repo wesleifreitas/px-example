@@ -3,7 +3,7 @@ define(['angular'], function(ng) {
 
 	var config = ng.module('pxConfig', [])
 		.constant('pxConfig', {
-			PX_PACKAGE: 'lib/px-project/src/', // Pacote Phoenix Project
+			PX_PACKAGE: 'lib/px-project/dist/', // Pacote Phoenix Project
 			LIB: 'lib/', // Componentes externos
 			PROJECT_ID: 0, // Identificação do projeto (table: px.project)
 			PROJECT_NAME: 'Phoenix Project - Exemplo', // Nome do projeto
