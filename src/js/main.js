@@ -18,8 +18,7 @@ require.config({
         'numeral-languages': '../lib/numeral/min/languages.min',
         'px-config': 'px-config',
         'metro': '../lib/px-project/dist/system/core/external/metro',
-        'docs': '../lib/px-project/dist/system/core/external/docs',
-        'px-util': '../lib/px-project/dist/system/utils/js/px-util'
+        'docs': '../lib/px-project/dist/system/core/external/docs'
     },
     shim: {
         'angular': {
@@ -53,7 +52,7 @@ require.config({
             deps: ['angular']
         },
         'metro': {
-            deps: ['jquery', 'jquery-ui']
+            deps: ['jquery', 'jquery-ui','docs']
         },
         'docs': {
             deps: ['jquery']
