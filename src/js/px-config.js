@@ -7,7 +7,7 @@ define(['angular'], function(ng) {
 		.constant('pxConfig', {
 			PX_PACKAGE: PX_PACKAGE, // Package Phoenix Project
 			LIB: 'lib/', // Componentes externos
-			PROJECT_ID: 0, // Identificação do projeto (table: px.project)
+			PROJECT_ID: 1, // Identificação do projeto (table: px.project)
 			PROJECT_NAME: 'Phoenix Project - Exemplo', // Nome do projeto
 			PROJECT_SRC: 'px-example/src/', // Source do projeto
 			PROJECT_CSS: [PX_PACKAGE + 'system/login/login.css','styles.css'], // Arquivos .css
