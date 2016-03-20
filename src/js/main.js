@@ -19,7 +19,7 @@ require.config({
         'jstree': '../lib/jstree/dist/jstree.min',
         'metro': '../lib/px-project/dist/system/core/external/metro',
         'docs': '../lib/px-project/dist/system/core/external/docs',        
-        'px-config': 'px-config',
+        'px-config': 'px-config'
     },
     shim: {
         'angular': {
