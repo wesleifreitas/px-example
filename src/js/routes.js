@@ -1,25 +1,30 @@
 define(['./app'], function(app) {
     'use strict';
 
-    app.config(['pxConfig', '$routeProvider', '$locationProvider', function(pxConfig, $routeProvider, $locationProvider) {
+    app.config(['pxConfig', '$routeProvider', '$locationProvider', '$mdThemingProvider', function(pxConfig, $routeProvider, $locationProvider, $mdThemingProvider) {
         $routeProvider.when('/login', {
             templateUrl: pxConfig.PX_PACKAGE + 'system/login/login.html',
-            controller: 'loginCtrl',
+            controller: 'LoginCtrl',
             controllerAs: 'vm'
         });
         $routeProvider.when('/home', {
             templateUrl: pxConfig.PX_PACKAGE + 'system/home/home.html',
-            controller: 'homeCtrl',
+            controller: 'HomeCtrl',
             controllerAs: 'vm'
         });
         $routeProvider.when('/', {
             templateUrl: pxConfig.PX_PACKAGE + 'system/home/home.html',
-            controller: 'homeCtrl',
+            controller: 'HomeCtrl',
             controllerAs: 'vm'
         });
         $routeProvider.otherwise({
             redirectTo: '/login'
         });
+
+        // https://material.angularjs.org/latest/Theming/01_introduction
+        $mdThemingProvider.theme('default')
+            .primaryPalette('grey')
+            .accentPalette('blue');
     }]);
 
     app.run(function(pxConfig, $rootScope, $location, $cookieStore, $http) {

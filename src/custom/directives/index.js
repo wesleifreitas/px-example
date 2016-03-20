@@ -1,3 +1,1 @@
-define([
-	'./app-version'
-], function() {});
+define(['./app-version'], function() {});

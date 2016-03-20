@@ -1,4 +1,4 @@
-<div class="px-view" ng-controller="exemploCtrl">
+<div class="px-view" ng-controller="ExemploCtrl">
     <!-- Directive px-view-header, apresenta o cabeçalho da view atual -->
     <div px-fixed px-wrapper=".px-view" px-hfixed="true" px-vfixed="true" class="px-header">
         <px-view-header px-show-hr="true"></px-view-header>
@@ -9,34 +9,34 @@
         <div class="contentSearch" layout="row" layout-wrap>
             <div layout="row" layout-sm="column" layout-wrap layout-padding flex="100">
                 <div flex="25" flex-sm="100">
-                    <label>Auto-complete (Nome)</label>
-                    <px-complete id="filtroComplete" ng-model="filtroComplete" px-input-class="form-control" placeholder="  Pesquisar nome" px-enter="getData()" px-table="dbo.vw_exemplo" px-fields="{{filtroCompleteConfig.fields}}"></px-complete>
+                    <label for="filtro_exe2_id">Input Search</label>
+                    <px-input-search id="filtro_exe2_id" name="filtro_exe2_id" ng-model="filtro_exe2_id" px-input-class="form-control" placeholder="Pesquisar categoria" px-control="filtro_exe2_id_searchControl" px-complete="true" px-config="{{exe2_id_searchConfig}}" px-dialog="true" px-search-click="filtro_exe2_id_searchClick(event)"></px-input-search>
                 </div>
                 <div flex="10" flex-sm="100">
-                    <label>ID</label>
-                    <input id="filtroId" ng-model="filtroId" class="form-control" px-enter="getData()" px-valid-number>
+                    <label for="filtroId">ID</label>
+                    <input id="filtroId" name="filtroId" ng-model="filtroId" class="form-control" px-enter="getData()" px-valid-number>
                 </div>
                 <div flex="15" flex-sm="100">
-                    <label>Status</label>
-                    <select id="filtroStatus" ng-model="filtroStatus" class="form-control" px-enter="getData()" ng-options="option.name for option in dataStatus.optionsAll track by option.id"></select>
+                    <label for="filtroStatus">Status</label>
+                    <select id="filtroStatus" name="filtroStatus" ng-model="filtroStatus" class="form-control" px-enter="getData()" ng-options="option.name for option in dataStatus.optionsAll track by option.id"></select>
                 </div>
                 <div flex="25" flex-sm="100">
-                    <label>Nome</label>
-                    <input id="filtroNome" ng-model="filtroNome" class="form-control" px-enter="getData()">
+                    <label for="filtroNome">Nome</label>
+                    <input id="filtroNome" name="filtroNome" ng-model="filtroNome" class="form-control" px-enter="getData()">
                 </div>
                 <div flex="15" flex-sm="100">
-                    <label>CPF</label>
-                    <input id="filtroCPF" ng-model="filtroCPF" class="form-control" px-enter="getData()" px-br-cpf-mask>
+                    <label for="filtroCPF">CPF</label>
+                    <input id="filtroCPF" name="filtroCPF" ng-model="filtroCPF" class="form-control" px-enter="getData()" px-br-cpf-mask>
                 </div>
                 <div flex="15" flex-sm="100">
-                    <label>Telefone</label>
-                    <input id="filtroTelefone" ng-model="filtroTelefone" class="form-control" px-enter="getData()" px-br-phone-mask>
+                    <label for="filtroTelefone">Telefone</label>
+                    <input id="filtroTelefone" name="filtroTelefone" ng-model="filtroTelefone" class="form-control" px-enter="getData()" px-br-phone-mask>
                 </div>
                 <div flex="20" flex-sm="100">
-                    <label>Valor</label>
+                    <label for="filtroValor">Valor</label>
                     <div class="input-group">
                         <span class="input-group-addon">R$</span>
-                        <input id="filtroValor" ng-model="filtroValor" class="form-control" px-enter="getData()" px-number-mask>
+                        <input id="filtroValor" name="filtroValor" ng-model="filtroValor" class="form-control" px-enter="getData()" px-number-mask>
                     </div>
                 </div>
             </div>
@@ -45,19 +45,21 @@
     <div>
         <div px-fixed px-wrapper=".px-view" px-hfixed="true" layout="row" layout-align="end center">
             <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" ng-click="add($event)">
+                    <span class="fa fa-plus"></span> <span hide-sm>Adicionar</span>
+                </button>
                 <button type="button" class="btn btn-default" ng-click="add()">
-                    <span class="fa fa-plus"></span> Adicionar
+                    <span class="fa fa-pencil"></span> <span hide-sm>Editar</span>
                 </button>
                 <button type="button" class="btn btn-default" ng-click="remove()">
-                    <span class="fa fa-remove"></span> Remover
+                    <span class="fa fa-remove"></span> <span hide-sm>Remover</span>
                 </button>
                 <button type="button" class="btn btn-default" ng-click="getData()">
-                    <span ng-class="gridControl.working | dataGridRefresh"></span> Atualizar
+                    <span ng-class="dgExemploControl.working | dataGridRefresh"></span> <span hide-sm>Atualizar</span>
                 </button>
             </div>
         </div>
-        <px-data-grid control="gridControl" px-debug="false" px-init="gridInit(this)" px-table="dbo.vw_exemplo" px-fields="{{gridConfig.fields}}" px-order-by="exe_id" px-data-init="true" px-check="true">
+        <px-data-grid id="dgExemplo" px-debug="true" px-control="dgExemploControl" px-init="dgExemploInit()" px-config="{{dgExemploConfig}}" px-data-init="true" px-check="true" px-edit="true" px-item-edit="edit(event)">
         </px-data-grid>
-        <px-form></px-form>
     </div>
 </div>
