@@ -89,86 +89,88 @@ define(['../controllers/module'], function(controllers) {
         $scope.dgExemploControl = {};
 
         /**
-         * Inicializa listagem
+         * Configurações da listagem
+         * - fields: Colunas da listagem
+         * @type {Object}
+         */
+        $scope.dgExemploConfig = {
+            schema: 'dbo',
+            table: 'exemplo',
+            view: 'vw_exemplo',
+            orderBy: [{
+                field: 'exe_nome',
+                sort: 'asc'
+            }],
+            group: true,
+            fields: [{
+                pk: true,
+                visible: false,
+                title: 'id',
+                field: 'exe_id',
+                type: 'int',
+                filter: 'filtroId',
+                filterOperator: '='
+            }, {
+                title: 'Status',
+                field: 'exe_ativo_label',
+                type: 'bit',
+                filter: 'filtroStatus',
+                filterOperator: '=',
+                filterOptions: {
+                    field: 'exe_ativo',
+                    selectedItem: 'id'
+                }
+            }, {
+                title: 'Nome',
+                field: 'exe_nome',
+                type: 'string',
+                filter: 'filtroNome',
+                filterOperator: '%LIKE%'
+            }, {
+                title: 'Categoria',
+                field: 'exe2_categoria',
+                type: 'bit',
+                filter: 'filtro_exe2_id',
+                filterOperator: '=',
+                filterOptions: {
+                    field: 'exe2_id',
+                    selectedItem: 'exe2_id'
+                }
+            }, {
+                title: 'CPF',
+                field: 'exe_cpf',
+                type: 'int',
+                stringMask: '###.###.###-##',
+                filter: 'filtroCPF',
+                filterOperator: '='
+            }, {
+                title: 'Telefone',
+                field: 'exe_telefone',
+                type: 'string',
+                stringMask: 'brPhone',
+                filter: 'filtroTelefone',
+                filterOperator: '='
+            }, {
+                title: 'Valor',
+                field: 'exe_valor',
+                type: 'decimal',
+                numeral: '0,0.00',
+                filter: 'filtroValor',
+                filterOperator: '='
+            }, {
+                title: 'Data',
+                field: 'exe_data',
+                type: 'datetime',
+                moment: 'dddd - DD/MM/YYYY'
+            }],
+        };
+
+        /**
+         * Evento após listagem inicializar
          * @return {Void}
          */
         $scope.dgExemploInit = function() {
-            /**
-             * Configurações da listagem
-             * - fields: Colunas da listagem
-             * @type {Object}
-             */
-            $scope.dgExemploConfig = {
-                schema: 'dbo',
-                table: 'exemplo',
-                view: 'vw_exemplo',
-                orderBy: [{
-                    field: 'exe_nome',
-                    sort: 'asc'
-                }],
-                group: true,
-                fields: [{
-                    pk: true,
-                    visible: false,
-                    title: 'id',
-                    field: 'exe_id',
-                    type: 'int',
-                    filter: 'filtroId',
-                    filterOperator: '='
-                }, {
-                    title: 'Status',
-                    field: 'exe_ativo_label',
-                    type: 'bit',
-                    filter: 'filtroStatus',
-                    filterOperator: '=',
-                    filterOptions: {
-                        field: 'exe_ativo',
-                        selectedItem: 'id'
-                    }
-                }, {
-                    title: 'Nome',
-                    field: 'exe_nome',
-                    type: 'string',
-                    filter: 'filtroNome',
-                    filterOperator: '%LIKE%'
-                }, {
-                    title: 'Categoria',
-                    field: 'exe2_categoria',
-                    type: 'bit',
-                    filter: 'filtro_exe2_id',
-                    filterOperator: '=',
-                    filterOptions: {
-                        field: 'exe2_id',
-                        selectedItem: 'exe2_id'
-                    }
-                }, {
-                    title: 'CPF',
-                    field: 'exe_cpf',
-                    type: 'int',
-                    stringMask: '###.###.###-##',
-                    filter: 'filtroCPF',
-                    filterOperator: '='
-                }, {
-                    title: 'Telefone',
-                    field: 'exe_telefone',
-                    type: 'string',
-                    stringMask: 'brPhone',
-                    filter: 'filtroTelefone',
-                    filterOperator: '='
-                }, {
-                    title: 'Valor',
-                    field: 'exe_valor',
-                    type: 'decimal',
-                    numeral: '0,0.00',
-                    filter: 'filtroValor',
-                    filterOperator: '='
-                }, {
-                    title: 'Data',
-                    field: 'exe_data',
-                    type: 'datetime',
-                    moment: 'dddd - DD/MM/YYYY'
-                }],
-            };
+
         };
 
         /**
@@ -349,7 +351,6 @@ define(['../controllers/module'], function(controllers) {
          */
         $scope.formInsert = function() {
             $scope.formControl.insert();
-            $mdDialog.hide();
         };
 
         /**
@@ -358,7 +359,6 @@ define(['../controllers/module'], function(controllers) {
          */
         $scope.formUpdate = function(form) {
             $scope.formControl.update();
-            $mdDialog.hide();
         };
 
         /**
@@ -369,12 +369,14 @@ define(['../controllers/module'], function(controllers) {
         $scope.formCallback = function(event) {
             if (event.action === 'select') {
                 $scope.exe_senha_confirmar = event.qQuery[0].EXE_SENHA;
-            } else if (event.action == 'insert') {
+            } else if (event.action == 'insert' && !event.error) {
                 // Adicionar registro na listagem
                 $scope.dgExemploControl.addDataRow(event.data);
-            } else if (event.action == 'update') {
+                $mdDialog.hide();
+            } else if (event.action == 'update' && !event.error) {
                 // Atualizar registro na listagem
                 $scope.dgExemploControl.updateDataRow(event.data);
+                $mdDialog.hide();
             }
         };
 

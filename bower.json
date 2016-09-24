@@ -1,31 +1,28 @@
 {
-  "name": "px-example",
-  "version": "0.0.0",
-  "homepage": "https://github.com/wesleifreitas/px-example",
-  "authors": [
-    "Weslei Freitas <weslei.rfreitas@gmail.com>"
-  ],
-  "description": "Phoenix Project Example",
-  "main": "index.html",
-  "moduleType": [
-    "amd",
-    "globals"
-  ],
-  "keywords": [
-    "px-example"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "px-project": "~1"
-  },
-  "resolutions": {
-    "bootstrap": "~3.3.5"
-  }
+    "name": "px-example",
+    "version": "0.0.0",
+    "homepage": "https://github.com/wesleifreitas/px-example",
+    "authors": [
+        "Weslei Freitas <weslei.rfreitas@gmail.com>"
+    ],
+    "description": "Phoenix Project Example",
+    "main": "index.html",
+    "moduleType": [
+        "amd",
+        "globals"
+    ],
+    "keywords": [
+        "px-example"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "px-project": "~1"
+    }
 }
