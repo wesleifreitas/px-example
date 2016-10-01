@@ -18,7 +18,7 @@ require.config({
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
         'jstree': '../lib/jstree/dist/jstree.min',
-        'px-module': '../lib/px-module/dist/px-full/px-full'
+        'px-module': '../lib/px-module/dist/px-full/px-full.min'
     },
     shim: {
         'angular': {
