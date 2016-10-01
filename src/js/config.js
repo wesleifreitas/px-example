@@ -88,12 +88,14 @@ define(['./app'], function(app) {
                         }
                     });
                 }*/
-
                 // Redirecionar para a página de login se não estiver logado e tentar acessar uma página restrita                
                 var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
                 var loggedIn = $rootScope.globals.currentUser;
                 if (restrictedPage && !loggedIn) {
                     $location.path('/login');
+                } else if (restrictedPage && loggedIn && $location.path() === '/home') {
+                    // Redirecionar para primeira tela (exemplo)
+                    $location.path('/home/exemplo');
                 }
             });
         } else {
