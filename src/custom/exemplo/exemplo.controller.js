@@ -4,9 +4,9 @@ define(['../controllers/module'], function(controllers) {
     // Controller
     controllers.controller('ExemploCtrl', ExemploCtrl);
 
-    ExemploCtrl.$inject = ['exemploService', 'pxConfig', '$scope', '$element', '$attrs', '$mdDialog'];
+    ExemploCtrl.$inject = ['exemploService', 'pxConfig', '$scope', '$element', '$mdDialog'];
 
-    function ExemploCtrl(exemploService, pxConfig, $scope, $element, $attrs, $mdDialog) {
+    function ExemploCtrl(exemploService, pxConfig, $scope, $element, $mdDialog) {
         // Variáveis gerais - Start
         /**
          * Variável de controle de visualição do Filtro Avançado
@@ -93,7 +93,7 @@ define(['../controllers/module'], function(controllers) {
          * - fields: Colunas da listagem
          * @type {Object}
          */
-        $scope.dgExemploConfig = {        
+        $scope.dgExemploConfig = {
             schema: 'dbo',
             table: 'exemplo',
             view: 'vw_exemplo',
